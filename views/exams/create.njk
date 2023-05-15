@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <form class="card" method="POST" action="/exams">
+        <section
+            class="avatar"
+            style="background: url(https://source.unsplash.com/collection/1411467/300x300) no-repeat center center  / cover"></section>
+        <section class="details">
+            <h3>Novo Exame</h3>
+            {% include 'exams/fields.njk' %}
+        </section>
+    </form>
+{% endblock content %}

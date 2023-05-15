@@ -1,0 +1,17 @@
+{% extends "layout.njk" %}
+{% block content %}
+  <div class="card">
+    <section class="avatar" style="background: url({{ exam.avatar_url }})no-repeat center center  / cover"></section>
+    <section class="details">
+      <form action="/exams?_method=PUT" method="post">
+        <h3>Editar Instrutor</h3>
+        {% include 'exams/fields.njk' %}
+        <input type="hidden" name="id" value={{ exam.id }}></form>
+        <form id="form-delete" action="/exams?_method=DELETE" method="post">
+          <input type="hidden" name="id" value={{ exam.id }}>
+            <button type="submit">Deletar</button>
+          </form>
+          {% include '../delete.njk' %}
+        </section>
+      </div>
+    {% endblock content %}

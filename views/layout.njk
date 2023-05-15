@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <title>Disgraphia</title>
+        {% endblock %}
+        <link rel="stylesheet" href="/styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="links">
+                <a href="/exams">Exame</a>
+                <a href="/members">Relatório</a>
+            </div>
+        </header>
+        {% block content %}{% endblock %}
+        <script src="/scripts.js"></script>
+    </body>
+</html>

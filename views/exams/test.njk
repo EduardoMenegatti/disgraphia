@@ -1,0 +1,12 @@
+{% extends "layout.njk" %}
+{% block content %}
+  <div class="card">
+    <section class="details"> 
+      <form action="/exams?_method=PUT" method="post">
+        <h3>{{exam.name}}</h3> 
+        <a href="/exams/{{ exam.id }}/test">Limpar</a>
+        {% include 'exams/exam.njk' %}
+
+
+      </div>
+    {% endblock content %}

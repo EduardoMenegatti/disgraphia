@@ -1,0 +1,36 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <div class="card table-container">
+        <a href="/exams/create">Novo</a>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>exame</th>
+                    <th>Data</th>
+                    
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for exam in exams %}
+                    <tr>
+                        <td>
+                            {{ exam.name }}
+                            
+                            </td>
+                            <td>
+                            {{ exam.created_at }}
+                            
+                            </td>
+
+                        <td>
+                            <a href="/exams/{{ exam.id }}/test">fazer</a>
+                            <a href="/exams/{{ exam.id }}">ver</a>                          
+                            <a href="/exams/{{ exam.id }}/test">Excluir</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

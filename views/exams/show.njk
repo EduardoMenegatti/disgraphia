@@ -1,0 +1,34 @@
+{% extends "layout.njk" %}
+{% block content %}
+    <div class="card">
+        <section class="avatar" style="background: url({{ exam.avatar_url }}) no-repeat center center  / cover"></section>
+        <section class="details">
+            <h3>Detalhes</h3>
+            <div class="item">
+                <div>Instrutor</div>
+                <div>{{ exam.name }}</div>
+            </div>
+            <div class="item">
+                <div>Idade</div>
+                <div>{{ exam.age }}</div>
+            </div>
+            <div class="item">
+                <div>Sexo</div>
+                <div>{{ "Masculino" if exam.gender == "M" else "Feminino" }}</div>
+            </div>
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    {% for service in exam.services %}
+                        <span>{{ service }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="item">
+                <div>Desde</div>
+                <div>{{ exam.create_at }}</div>
+            </div>
+            <a href="/exams/{{ exam.id }}/edit" class="button">Editar</a>
+        </section>
+    </div>
+{% endblock content %}

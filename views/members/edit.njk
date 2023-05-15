@@ -1,0 +1,19 @@
+{% extends "layout.njk" %}
+{% block content %}
+  <div class="card">
+    <section
+      class="avatar"
+      style="background: url(https://source.unsplash.com/collection/9419482/300x300)no-repeat center center  / cover"></section>
+    <section class="details">
+      <form action="/members?_method=PUT" method="post">
+        <h3>Editar Membro</h3>
+        {% include 'members/fields.njk' %}
+        <input type="hidden" name="id" value={{ member.id }}></form>
+        <form id="form-delete" action="/members?_method=DELETE" method="post">
+          <input type="hidden" name="id" value={{ member.id }}>
+            <button type="submit">Deletar</button>
+          </form>
+          {% include '../delete.njk' %}
+        </section>
+      </div>
+    {% endblock content %}

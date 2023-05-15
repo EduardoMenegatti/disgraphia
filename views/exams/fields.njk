@@ -1,0 +1,24 @@
+<div class="item">
+  <div class="item">
+    <div>Nome do Paciente</div>
+    <div>
+      <input type="text" name="name" placeholder="Digite o nome" value="{{ patient.name }}"></div>
+    </div>
+    <div class="item">
+      <div>Data de nascimento</div>
+      <div>
+        <input type="date" name="birth" value="{{ patient.birth }}"></div>
+      </div>
+      <div class="item">
+        <div>Sexo</div>
+        <span>
+          <input type="radio" name="gender" value="M" {% if patient.gender == 'M' %} checked {% endif %}>Masculino
+          </span>
+          <span>
+            <input type="radio" name="gender" value="F" {% if patient.gender == 'F' %} checked {% endif %}>Feminino
+            </span>
+          </div>
+          <div class="item">
+            <div>
+              <button type="submit">Salvar</button>
+            </div>
